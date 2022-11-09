@@ -24,10 +24,7 @@
     <footer>Made by Manoj</footer>
     <script>
  
-        // A simple Javascript program to find max product pair in
-        // an array of integers
-         
-        // Function to find maximum product pair in arr[0..n-1]
+       
         function fun()
         {
             const arrElements = document.getElementById("arr").value;
@@ -49,11 +46,10 @@
                 return;
             }
          
-            // Initialize max product pair
+            
             let a = filtered[0], b = filtered[1];
          
-            // Traverse through every possible pair
-            // and keep track of max product
+            
             for (let i=0; i<n; i++)
             for (let j=i+1; j<n; j++)
                 if (filtered[i]*filtered[j] > a*b)
@@ -61,7 +57,7 @@
                     resu.style.display=='block'
             document.getElementById('result').innerHTML="Max product pair is {" + a + ", " + b + "}={" + a * b + "}";
         }
-        // This code is contributed by Manoj pandey
+        
          
         </script>
 </body>
