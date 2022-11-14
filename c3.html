@@ -1,64 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css" />
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="home.css" />
+<title>Document</title>
 </head>
 <body >
-    <form action="https://github.com/12018281/Pair-with-greatest-product-in-array" method="get" target="_blank" id="gitt">
-        <button type="submit" id="git"><u>Github</u></button>
-     </form>
-    <u><h1>Pair with greatest product in array</h1></u>
-      <label>Enter elements:</label>
-      <input type="text" name="arr" id="arr"/> 
-      <br />
-      <br />
-      <button type="button" onclick="fun()" id="findPair">FIND PAIR</button>
-    <br/>
-    <br/>
-    <br/>
-    <p id="result" display="none"></p>
-    <footer>Made by Manoj</footer>
-    <script>
- 
-       
-        function fun()
-        {
-            const arrElements = document.getElementById("arr").value;
-            const resu=document.getElementById("result");
-            const filtered=[]
+<form action="https://github.com/12018281/Pair-with-greatest-product-in-array" method="get" target="_blank" id="gitt">
+<button type="submit" id="git"><u>Github</u></button>
+</form>
+<u><h1>Pair with greatest product in array</h1></u>
+<label>Enter elements:</label>
+<input type="text" name="arr" id="arr"/>
+<br />
+<br />
+<button type="button" onclick="fun()" id="findPair">FIND PAIR</button>
+<br/>
+<br/>
+<br/>
+<p id="result" display="none"></p>
+<footer>Made by Manoj</footer>
+<script>
 
-            //fetching the elements
-            for(let i=0; i<arrElements.length; i++) {
-                if(arrElements[i] != ",") {
-                    filtered.push(arrElements[i])
-                }
-            }
-    
-            let n=filtered.length
-            if (n < 2)
-            {   
-                resu.style.display=='block'
-                document.getElementById('result').innerHTML="No pairs exists" + "<br>";
-                return;
-            }
-         
-            
-            let a = filtered[0], b = filtered[1];
-         
-            
-            for (let i=0; i<n; i++)
-            for (let j=i+1; j<n; j++)
-                if (filtered[i]*filtered[j] > a*b)
-                    a = filtered[i], b = filtered[j];
-                    resu.style.display=='block'
-            document.getElementById('result').innerHTML="Max product pair is {" + a + ", " + b + "}={" + a * b + "}";
-        }
-        
-         
-        </script>
+
+
+function fun()
+{
+const arrElements = document.getElementById("arr").value;
+if(arrElements === "") alert("Please enter input!")
+else {
+const resu=document.getElementById("result");
+const filtered=[]
+
+//fetching the elements
+for(let i=0; i<arrElements.length; i++) {
+if(arrElements[i] != ",") {
+filtered.push(arrElements[i])
+}
+}
+
+let n=filtered.length
+if (n < 2)
+{
+resu.style.display=='block'
+document.getElementById('result').innerHTML="No pairs exists" + "<br>";
+return;
+}
+
+
+let a = filtered[0], b = filtered[1];
+
+for (let i=0; i<n; i++)
+for (let j=i+1; j<n; j++)
+if (filtered[i]*filtered[j] > a*b)
+a = filtered[i], b = filtered[j];
+resu.style.display=='block'
+document.getElementById('result').innerHTML="Max product pair is {" + a + ", " + b + "}={" + a * b + "}";
+}
+}
+
+
+</script>
 </body>
 </html>
